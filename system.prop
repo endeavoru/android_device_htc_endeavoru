@@ -149,7 +149,10 @@ persist.tegra.nvmmlite=1
 htc.audio.global.state=0
 htc.audio.global.profile=0
 #export for SoundHound
-persist.htc.audio.pcm.samplerate=48000
+
+# MAX prop name length is 31 bytes (android / platform/build / tools / post_process_props.py)
+#persist.htc.audio.pcm.samplerate=48000
+
 persist.htc.audio.pcm.channels=2
 #export for HTCAEC
 persist.audio.SupportHTCHWAEC=1
@@ -169,7 +172,7 @@ ro.usb_host=1
 # Internal Storage
 ro.phone_fat=1
 # for erase_dirty_fat tool
-ro.clean_free_cluster_threshold = 8
+ro.clean_free_cluster_threshold= 8
 
 # ro.storage_structure: define the storage structure of this project
 # FUSE: 0x8, FAT: 0x4, SD: 0x2, INS: 0x1

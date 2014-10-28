@@ -53,13 +53,24 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2302672896
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Wifi related defines
-USES_TI_MAC80211 := true
+#USES_TI_MAC80211 := true
+
 # Required for newer wpa_supplicant_8_ti versions to fix tethering
 BOARD_WIFI_SKIP_CAPABILITIES := true
 
 ifdef USES_TI_MAC80211
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 WPA_SUPPLICANT_VERSION           := VER_0_8_X_TI
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_WLAN_DEVICE                := wl12xx_mac80211
+BOARD_SOFTAP_DEVICE              := wl12xx_mac80211
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wl12xx_sdio.ko"
+WIFI_DRIVER_MODULE_NAME          := "wl12xx_sdio"
+WIFI_FIRMWARE_LOADER             := ""
+COMMON_GLOBAL_CFLAGS             += -DUSES_TI_MAC80211
+else
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_WLAN_DEVICE                := wl12xx_mac80211
 BOARD_SOFTAP_DEVICE              := wl12xx_mac80211

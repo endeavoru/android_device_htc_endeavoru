@@ -16,7 +16,7 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/htc/endeavoru/overlay
+#DEVICE_PACKAGE_OVERLAYS += device/htc/endeavoru/overlay
 
 # Set default USB interface
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# built kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/kernel:kernel
+
 # nfc
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
@@ -73,12 +77,12 @@ PRODUCT_PACKAGES += \
     librs_jni
 
 # Bluetooth tools
-$(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/bin/load-bt.sh:system/bin/load-bt.sh
-PRODUCT_PACKAGES += \
-    l2ping \
-    hciconfig \
-    hcitool \
+#$(call inherit-product, hardware/ti/wpan/ti-wpan-products.mk)
+#PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/bin/load-bt.sh:system/bin/load-bt.sh
+#PRODUCT_PACKAGES += \
+#    l2ping \
+#    hciconfig \
+#    hcitool \
 
 # audio packages
 PRODUCT_PACKAGES += \
