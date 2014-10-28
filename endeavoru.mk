@@ -65,8 +65,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # built kernel
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/device/htc/endeavoru-kernel/kernel:kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/kernel:kernel
 
 # nfc
 PRODUCT_COPY_FILES += \
