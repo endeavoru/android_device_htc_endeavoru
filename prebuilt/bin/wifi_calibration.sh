@@ -6,7 +6,7 @@ TAG="WifiCalibrator"
 OUTPUT_DIR="/data/misc/wifi"
 NVS_FILE="$OUTPUT_DIR/wl1271-nvs-calibrated.bin"
 AUTO_NVS_FILE="$OUTPUT_DIR/wl1271-nvs-calibrated_auto.bin"
-INI_FILE="/system/etc/wifi/ini_files/128x_TQS_D_1.7.ini"
+INI_FILE="/system/etc/wifi/TQS_D_1.7.ini"
 MODULE="/system/lib/modules/wl12xx_sdio.ko"
 MAC="00:01:02:03:04:05"
 
