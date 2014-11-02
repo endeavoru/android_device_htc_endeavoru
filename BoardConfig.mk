@@ -53,6 +53,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2302672896
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Wifi related defines
+
 #USES_TI_MAC80211 := true
 
 # Required for newer wpa_supplicant_8_ti versions to fix tethering
@@ -81,8 +82,11 @@ COMMON_GLOBAL_CFLAGS             += -DUSES_TI_MAC80211
 endif
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/htc/endeavoru
-TARGET_KERNEL_CONFIG := cyanogenmod_endeavoru_defconfig
+#TARGET_KERNEL_SOURCE := kernel/htc/endeavoru
+#TARGET_KERNEL_CONFIG := cyanogenmod_endeavoru_defconfig
+#TARGET_PREBUILT_KERNEL := kernel/aosp/tegra/arch/arm/boot/zImage
+#TARGET_KERNEL_CONFIG := tegra3_defconfig
+
 
 # Building wifi modules
 TARGET_MODULES_SOURCE := "kernel/htc/endeavoru/drivers/net/wireless/compat-wireless_R5.SP2.03"
